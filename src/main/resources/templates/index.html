@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>码匠社区</title>
@@ -34,7 +34,7 @@
                     </ul>
                 </li>
                 <li th:if="${session.user == null}">
-                    <a href="https://github.com/login/oauth/authorize?client_id=5efbd1a6025b8cc891e1&redirect_uri=http://localhost:8080/callback&scope=user&state=1">登录</a></li>
+                    <a href="https://github.com/login/oauth/authorize?client_id=5efbd1a6025b8cc891e1&redirect_uri=http://localhost:8007/callback&scope=user&state=1">登录</a></li>
 
             </ul>
         </div>

@@ -24,11 +24,11 @@ public class AuthorizeController {
    private GithubProvider githubProvider;
    @Autowired
    private UserMapper userMapper;
-   @Value("5efbd1a6025b8cc891e1")
+   @Value("${github.client.id}")
    private String clientId;
-   @Value("55121823824a862cd1b80f26f1d1a39f32cd4580")
+   @Value("${github.client.secret}")
    private String clientSecret;
-   @Value("http://localhost:8080/callback")
+   @Value("${github.redirect.uri}")
    private String redirectUri;
 
    @GetMapping("/callback")
@@ -53,6 +53,7 @@ public class AuthorizeController {
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
             userMapper.insert(user);
+           System.out.println(user.getName());
             response.addCookie(new Cookie("token",token));
            //登陆成功，写cookie和session
             return "redirect:/";

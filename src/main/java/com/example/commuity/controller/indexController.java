@@ -27,10 +27,7 @@ public class indexController {
             break;
 
         }
-    }
-
-
-
+      }
 
     return "index";
 }

@@ -5,7 +5,6 @@ public class User {
     private String name;
     private String accountId;
     private String token;
-    private String aaa;
 
     public String getToken() {
         return token;
